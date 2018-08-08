@@ -1,9 +1,20 @@
-const cacheName = 'pwa-starter-kit';
+const cacheName = 'appgharage-blog';
 const cacheVersion = `${cacheName}::1.0.0`;
 
 const cachedFiles = [
     '/',
-    '/css/styles.css'
+    '/css/responsive.layout.css',
+    '/css/styles.layout.css',
+    '/css/responsive.single-post.css',
+    '/css/styles.single-post.css',
+    '/css/bootstrap.css',
+    '/css/ionicons.css',
+    '/css/swiper.css',
+    '/js/bootstrap.js',
+    '/js/jquery-3.1.1.min.js',
+    '/js/script.js',
+    '/js/swiper.js',
+    '/js/tether.min.js'
 ];
 
 const networkFiles = [];
