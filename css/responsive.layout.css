@@ -9,7 +9,7 @@
                         .slider .logo {
                             height: 100px;
                             margin-left: 25%;
-                            margin-top: %
+                            margin-top: 4%
                         }
                     }
                     
@@ -168,9 +168,9 @@
                             height: 20vh;
                         }
                         .slider .logo {
-                            height: 70px;
-                            margin-left: 4%;
-                            margin-top: 5%
+                            height: 65px;
+                            margin-left: 5%;
+                            margin-top: 4%
                         }
                     }
                     /* Screens Resolution : 359px
@@ -181,8 +181,8 @@
                             height: 20vh;
                         }
                         .slider .logo {
-                            height: 60px;
-                            margin-left: 2%;
+                            height: 50px;
+                            margin-left: 10%;
                             margin-top: 7%
                         }
                     }
@@ -190,5 +190,3 @@
 -------------------------------------------------------------------------- */
                     
                     @media only screen and (max-width: 290px) {}
-                    
-                    4
