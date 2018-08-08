@@ -12,7 +12,7 @@ const cachedFiles = [
     '/css/swiper.css',
     '/js/bootstrap.js',
     '/js/jquery-3.1.1.min.js',
-    '/js/script.js',
+    '/js/scripts.js',
     '/js/swiper.js',
     '/js/tether.min.js'
 ];
