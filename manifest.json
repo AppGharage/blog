@@ -6,8 +6,8 @@
         "type": "image/png",
         "sizes": "512x512"
     }],
-    "start_url": "https://appgharageblog.netlify.com/",
+    "start_url": "https://blog.appgharage.com/",
     "background_color": "#FFFFFF",
     "theme_color": "#3e8ac9",
-    "display": "minimal-ui"
+    "display": "standalone"
 }
