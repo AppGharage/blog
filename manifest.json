@@ -1,12 +1,12 @@
 {
     "short_name": "AppGharage",
-    "name": "A Technical Blog by AppGharage",
+    "name": "A Technical Blog by Developers at AppGharage",
     "icons": [{
         "src": "images/icon.png",
         "type": "image/png",
         "sizes": "512x512"
     }],
-    "start_url": "https://blog.appgharage.com/",
+    "start_url": "/",
     "background_color": "#FFFFFF",
     "theme_color": "#3e8ac9",
     "display": "standalone"

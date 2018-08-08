@@ -19,21 +19,30 @@ const cachedFiles = [
 
 const networkFiles = [];
 
+/**
+ * Installing Service Worker
+ * ----------------------------
+ * Install Service Worker by adding all urls
+ * to be cached to the cache. Urls to be cached 
+ * are store in the variable cachedFiles
+ */
 self.addEventListener('install', event => {
-
-    console.log('[pwa install]');
-
+    console.log('[installing worker]');
     event.waitUntil(
+        //Open Cache and all URLS to cache
         caches.open(cacheVersion)
         .then(cache => cache.addAll(cachedFiles))
     );
-
 });
 
+/**
+ * Activate Worker
+ * -------------------------
+ * If cache is has been updated then
+ * delete old cache and update it with new version
+ */
 self.addEventListener('activate', event => {
-
-    console.log('[pwa activate]');
-
+    console.log('[activating worker]');
     event.waitUntil(
         caches.keys().then(keys =>
             Promise.all(
@@ -42,37 +51,23 @@ self.addEventListener('activate', event => {
             )
         )
     );
-
-    return self.clients.claim();
-
 });
 
+
+/**
+ * Fetching a Resource
+ * ----------------------
+ * Fetch from cache if offline and If network is available 
+ * fetch network Resource and update cache else 
+ */
 self.addEventListener('fetch', event => {
-
-    if (networkFiles.filter(item => event.request.url.match(item)).length) {
-
-        console.log('[network fetch]', event.request.url);
-
-        event.respondWith(
-            caches.match(event.request)
-            .then(response => response || fetch(event.request))
-        );
-
-    } else {
-
-        console.log('[pwa fetch]', event.request.url);
-
-        event.respondWith(
-            caches.match(event.request)
-            .then(response => {
-
-                caches.open(cacheVersion).then(cache => cache.add(event.request.url));
-
-                return response || fetch(event.request);
-
-            })
-        );
-
-    }
+    console.log('[fetching]', event.request.url);
+    event.respondWith(
+        caches.match(event.request)
+        .then(response => {
+            caches.open(cacheVersion).then(cache => cache.add(event.request.url));
+            return response || fetch(event.request);
+        })
+    );
 
 });

@@ -324,23 +324,23 @@
     <!-- SCIPTS -->
 
     <script>
-        if ('serviceWorker' in navigator) {
-
-            window.addEventListener('load', () =>
+        window.addEventListener('load', () => {
+            //Check For Service Worker Support
+            if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('serviceWorker.js')
-            );
-
-        }
-
-        window.addEventListener('online', function() {
-
-            document.querySelector('.connectivity-status').innerText = 'online';
-
-        })
-
-        window.addEventListener('offline', function() {
-
-            document.querySelector('.connectivity-status').innerText = 'offline';
+                    .then((reg) => {
+                        // registration worked
+                        console.log('Registration succeeded.');
+                    }).catch((error) => {
+                        // registration failed
+                        console.log('Registration failed');
+                    });
+            }
+            //check for IdexedDB support
+            if (!('indexedDB' in window)) {
+                console.log('This browser doesn\'t support IndexedDB');
+                return;
+            }
 
         });
     </script>
