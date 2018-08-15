@@ -5,7 +5,7 @@ backend:
 media_folder: '/images'
 public_folder: '/images/uploads'
 
-  collections:
+collections:
   - name: "single-post" # Used in routes, e.g., /admin/collections/blog
     label: "single-post" # Used in the UI
     folder: "_single-post" # The path to the folder where the documents are stored
